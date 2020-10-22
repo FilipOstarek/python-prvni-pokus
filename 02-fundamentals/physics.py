@@ -12,13 +12,28 @@ SPEED_OF_LIGHT = 299796 #? rychlost světla ve vakuu m/s
 SPEED_OF_SOUND = 343 #? rychlost zvuku při teplotě 20 °C v suchém vzduchu
 
 def drahaS(s):
-    return print("Světlo urazí " + str(float(s*SPEED_OF_LIGHT)) + " metrů")
+    '''
+    Vypočítání dráhy světla v metrech
+    '''
+    return float(s*SPEED_OF_LIGHT)
+
 def drahaZ(m):
-    return print("Zvuk se na určité místo mělo dostat za " + str(float(m/SPEED_OF_SOUND))+" sekund")
+    '''
+    Vypočítání času uražení zvuku v sekundách
+    '''
+    return float(m/SPEED_OF_SOUND)
+
 def silaNaZemi(kg):
-    return print("Síla přitahující věc na Zemi je " + str(float(kg*EARTH_GRAVITY)) + " N")
+    '''
+    Vypočítání síly působící na těleso na Zemi
+    '''
+    return float(kg*EARTH_GRAVITY)
+
 def silaNaMesici(kg):
-    return print("Síla přitahující věc na měsící je " + str(float(kg*MOON_GRAVITY)) + " N")
+    '''
+    Vypočítání síly působící na těleso na měsící
+    '''
+    return float(kg*MOON_GRAVITY)
 
 '''
 import random

@@ -22,7 +22,7 @@ Potom řetězec r'\n' odpovídá dvěma znakům - zpětnému lomítku a znaku n,
 hello = r'Toto je dlouhý řetězec obsahující mnoho\n\
 řádek textu, stejně jej zapisujete i v C.'
 
-# print(hello)
+#print(hello)
 
 '''
 Další možností, jak vytvořit víceřádkový řetězec je jeho uzavření mezi odpovídající pár trojitých uvozovek. 
@@ -37,10 +37,10 @@ message = '''
 
        Andrej
 '''
-# print(message)
+#print(message)
 
 # Funkce len vrací délku řetězce
-# print(len(message))
+#print(len(message))
 
 '''
 Řetězce můžeme (podobně jako v jazyce C) indexovat. První znak řetězce pak má index 0. 
@@ -110,7 +110,7 @@ Proto jedinou cestou, jak vytvářet nové řetězce, je jejich kombinování, k
 # print('R' + first_name[1:])
 
 # Formátovaný výstup, použití řetězcových funkcí
-# print(f"{first_name.upper().rstrip()} {second_name.lower().lstrip()} {5 * 4} {len(message)}")
+#print(f"{first_name.upper().rstrip()} {second_name.lower().lstrip()} {5 * 4} {len(message)}")
 
 # Nalezení pozice podřetězce v řetězci
 # print(first_name.find("na"))
@@ -134,14 +134,14 @@ Pouze před samotný řetězec vložíme prefix u (podobně jako u raw řetězc�
 která umožňuje přístup ke všem registrovaným kodekům (např. Latin-1, ASCII, UTF-8 nebo UTF-16). '''
 
 # print(u'äöü'.encode('utf-8'))
-# print(u'čřž'.encode('latin2'))
+#print(u'čřž'.encode('latin2'))
 
 '''Opačnou konverzi umožňuje funkce decode(), které lze opět předat jediný argument - jméno kódování, 
 ve kterém je původní osmibitový řetězec.
 '''
 
-# print(b'\xc3\xa4\xc3\xb6\xc3\xbc'.decode('utf-8'))
-# print(b'\xe8\xf8\xbe'.decode('windows-1250'))
+#print(b'\xc3\xa4\xc3\xb6\xc3\xbc'.decode('utf-8'))
+#print(b'\xe8\xf8\xbe'.decode('windows-1250'))
 
 ''' 
 Programátorská výzva:
@@ -158,3 +158,26 @@ funkční kód, tím lepší).
 3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
    3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
 '''
+import random
+import string
+
+def datum():
+    datum =input('Zadejte datum v podobě DD. MM. RRRR (např. "01. 12. 2024")\n :')
+    print((datum.replace('.', '-')).replace(' ', '')[6:10]+(datum.replace('.', '-')).replace(' ', '')[2:6]+(datum.replace('.', '-')).replace(' ', '')[0:2])
+
+def tree():
+    tree = input('Zadejte cokiliv xd \n :')
+    print(tree.replace(' ', '_'))
+    print(tree.title().replace(' ', ''))
+
+def generace():
+    cislo = input('Zadejte kolik hesel chcete (číslem) ?\n :')
+    pomoc = 3
+    for i in range(int(cislo)):
+        print(''.join(random.choice(string.ascii_uppercase) for i in range(pomoc)) + ''.join(random.choice(string.ascii_lowercase) for i in range(pomoc)) + ''.join(random.choice(string.punctuation)) + ''.join(str(random.randint(100, 999))))
+
+datum() #1
+tree()  #2
+generace() #3
+
+
